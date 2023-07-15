@@ -9,7 +9,7 @@ const Doctor = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get("https://64b21e3938e74e386d54b0f2.mockapi.io/api/v1/doctors/doctors");
+                const response = await axios.get(process.env.DOCTORS_API_URL);
                 setDoctors(response.data);
                 setLoading(false);
             } catch (error) {
